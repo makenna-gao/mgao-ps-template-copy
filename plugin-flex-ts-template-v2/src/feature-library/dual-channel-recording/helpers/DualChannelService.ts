@@ -12,6 +12,9 @@ class DualChannelService extends ApiService {
     return new Promise((resolve, reject) => {
       const encodedParams: EncodedParams = {
         callSid: encodeURIComponent(callSid),
+        recordingStatusCallbackEvent: encodeURIComponent("completed"),
+        recordingStatusCallbackMethod: encodeURIComponent("POST"),
+        recordingStatusCallback: encodeURIComponent("https://voice-intelligence-1428.twil.io/create-transcript"),
         Token: encodeURIComponent(this.manager.user.token),
       };
 
